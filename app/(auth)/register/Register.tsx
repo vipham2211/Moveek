@@ -1,11 +1,8 @@
 "use client";
 import { userUpdateSchema } from "@/app/lib/schemas/schema";
 import { registerAction } from "@/app/lib/actions/userAction";
-import { useModal } from "@/common.stateFuncs";
 import Input from "@/components/ui/Input";
-import Modal from "@/components/ui/Modal";
 import { SubmitButton } from "@/components/ui/SubmitButton";
-import Toast from "@/components/ui/Toast";
 import Link from "next/link";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
