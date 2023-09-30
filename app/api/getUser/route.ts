@@ -6,6 +6,6 @@ export async function GET() {
 	if (!userCookie) return 
 	const userLogin = JSON.parse(userCookie.value);
 	
-  return NextResponse.json({ userLogin });
+  return NextResponse.json({ userLogin:Promise<any> });
   
 }
