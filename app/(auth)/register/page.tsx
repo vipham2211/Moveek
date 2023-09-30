@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import Register from "./Register";
 import { Metadata } from "next";
+import { fetchCinemaSystems } from "@/app/lib/actions/cinemasAction";
 
 export const metadata: Metadata = {
   title: "Đăng ký tài khoản | Moveek",
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 };
 
 
-const page = () => {
+const page = async() => {
+  const listCinemaSystems= await fetchCinemaSystems();
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -43,7 +45,7 @@ const page = () => {
     </div>
    
     </section>
-    <Footer/>
+    <Footer listCinemaSystems={listCinemaSystems} />
   </div>
   
   );
