@@ -93,7 +93,7 @@ export async function updateMovieAction (movie:FormData){
 	
 	  return data
 	 }catch (error) {
-		return {error};
+		return null;
 	 }
 }
 export async function deleteMovieAction  (id:number){
