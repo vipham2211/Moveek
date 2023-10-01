@@ -80,6 +80,11 @@ export async function updateMovieAction (movie:FormData){
 			body: movie,
 		}
 	  );
+
+	  if (!res.ok) {
+	  
+		throw new Error(`${res.status} : Failed to update movie`);
+	  }
 	  const data = await res.json();
 		if(data.statusCode === 200){
 			revalidateTag("listMoviesAdmin");

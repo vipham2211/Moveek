@@ -7,7 +7,6 @@ import SwitchComponent from "./SwitchComponent";
 import Flatpickr from "react-flatpickr";
 import Image from "next/image";
 import { CloudArrowUpIcon } from "@heroicons/react/24/outline";
-import { revalidateTagAction } from "@/app/lib/actions/userAction";
 import { toast } from "react-toastify";
 import {
   fetchImageAction,
