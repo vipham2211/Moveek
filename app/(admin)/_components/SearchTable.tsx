@@ -7,11 +7,12 @@ interface SearchTableProps{
 	limit:number,
 	keyword:string|undefined,
 	href:string
+	currentPage:number
 }
 
-const SearchTable = ({limit,keyword,href}:SearchTableProps) => {
+const SearchTable = ({limit,keyword,href,currentPage}:SearchTableProps) => {
 	const router = useRouter();
-	const [value,setValue] = useState(keyword)
+	const [value,setValue] = useState(keyword ? keyword : '' )
 	const debounceSearchValue = useDebounce(value,500)
 	
 	 
@@ -25,10 +26,13 @@ const SearchTable = ({limit,keyword,href}:SearchTableProps) => {
 			router.push(
 			  `/${href}/list?page=${1}&limit=${limit}&keyword=${debounceSearchValue}`
 			);
-		  } else {
-			router.push(`/${href}/list?page=${1}&limit=${limit}`);
 		  }
-	  },[router,debounceSearchValue,limit,href])
+		
+		 else {
+			
+			router.push(`/${href}/list?page=${currentPage !== undefined ?currentPage : 1}&limit=${limit}`);
+		  }
+	  },[router,debounceSearchValue,limit,href,currentPage])
 
   return (
 	<input

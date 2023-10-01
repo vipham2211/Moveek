@@ -12,6 +12,7 @@ import AddNewMovie from './AddNewMovie'
 interface UsersTableProps {
 	dataListMovies:DataListMoviesInterface,
 	keyword:string|undefined
+	
 }
 
 
@@ -42,7 +43,7 @@ const ListMovies = ({dataListMovies,keyword}:UsersTableProps) => {
 		<span>entries per page</span>
 	  </div>
 
-	  <SearchTable limit={limit} keyword={keyword} href="manage-movies"/>
+	  <SearchTable limit={limit} keyword={keyword} href="manage-movies" currentPage={dataListMoviesState.currentPage}/>
 	
 	  
 	</div>
