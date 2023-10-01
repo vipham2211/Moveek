@@ -24,10 +24,6 @@ const Pagination = ({
     pageNumbers.push(i);
   }
 
-  const getLinkHref = (page: number) => {
-    let keywordParam = keyword ? `&keyword=${keyword}` : "";
-    return `/${href}/list?page=${page}&limit=${limit}${keywordParam}`;
-  };
 
   return (
     <div className="py-4 flex justify-between">
@@ -39,7 +35,10 @@ const Pagination = ({
         <div className="flex space-x-1">
           {currentPage > 3 && (
             <Link
-              href={getLinkHref(1)}
+              href={{
+                pathname: `/${href}/list`,
+                query: { page: 1,limit:limit,keyword:keyword ? `${keyword}` : "" },
+              }}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
               ‹‹
@@ -47,7 +46,10 @@ const Pagination = ({
           )}
           {currentPage !== 1 && (
             <Link
-              href={getLinkHref(currentPage - 1)}
+              href={{
+                pathname: `/${href}/list`,
+                query: { page: currentPage - 1,limit:limit,keyword:keyword ? `${keyword}` : "" },
+              }}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
               ‹
@@ -56,7 +58,10 @@ const Pagination = ({
           {pageNumbers.map((page) => (
             <Link
               key={page}
-              href={getLinkHref(page)}
+              href={{
+                pathname: `/${href}/list`,
+                query: { page: page,limit:limit,keyword:keyword ? `${keyword}` : "" },
+              }}
               className={`px-4 py-2 rounded-[0.25rem] ${
                 page === currentPage ? "bg-[#E5E7EB]" : "hover:bg-[#e0e0fc]"
               }`}
@@ -66,7 +71,10 @@ const Pagination = ({
           ))}
           {currentPage !== totalPages && (
             <Link
-              href={getLinkHref(currentPage + 1)}
+              href={{
+                pathname: `/${href}/list`,
+                query: { page: currentPage + 1,limit:limit,keyword:keyword ? `${keyword}` : "" },
+              }}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
               ›
@@ -74,7 +82,11 @@ const Pagination = ({
           )}
           {currentPage < totalPages - 2 && (
             <Link
-              href={getLinkHref(totalPages)}
+           
+              href={{
+                pathname: `/${href}/list`,
+                query: { page: totalPages,limit:limit,keyword:keyword ? `${keyword}` : "" },
+              }}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
               ››
