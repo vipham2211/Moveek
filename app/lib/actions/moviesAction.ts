@@ -21,7 +21,9 @@ export  async function fetchListMovies() {
 }
 
 export  async function fetchMovieDetail(maPhim:string) {
-	const res = await fetch(`${process.env.DOMAIN}/QuanLyPhim/LayThongTinPhim?MaPhim=${Number(maPhim)}`)
+	const res = await fetch(`${process.env.DOMAIN}/QuanLyPhim/LayThongTinPhim?MaPhim=${Number(maPhim)}`,{
+		next: { tags: ["movieDetail"] }
+	})
 	
 	if (!res.ok) {
 		
@@ -84,6 +86,7 @@ export async function updateMovieAction (movie:FormData){
         revalidateTag("listMoviesClient");
         revalidateTag("showTime");
         revalidateTag("showtimeInfoMovie");
+		revalidateTag("movieDetail")
 	  }
 	  return data
 }
