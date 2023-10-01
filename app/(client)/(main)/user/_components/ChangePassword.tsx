@@ -1,6 +1,5 @@
 "use client";
 import { changePasswordAction } from "@/app/lib/actions/userAction";
-import { UserInfoInterface } from "@/common.types";
 import Input from "@/components/ui/Input";
 import { SubmitButton } from "@/components/ui/SubmitButton";
 import { useAppSelector } from "@/redux/hooks";
