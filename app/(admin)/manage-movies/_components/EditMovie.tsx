@@ -99,29 +99,31 @@ const EditMovie = ({ movie, closeModal }: EditMovieProps) => {
       const  data= await updateMovieAction(
         formData
       );
-
-      if (data && data.statusCode === 200) {
-        setMovieState({
-          maPhim: data.content.maPhim,
-          tenPhim: data.content.tenPhim,
-          trailer: data.content.trailer,
-          hinhAnh: data.content.hinhAnh,
-          moTa: data.content.moTa,
-          maNhom: data.content.maNhom,
-          hot: data.content.hot,
-          dangChieu: data.content.dangChieu,
-          sapChieu: data.content.sapChieu,
-          ngayKhoiChieu: formatDate(data.content.ngayKhoiChieu),
-          danhGia: data.content.danhGia,
-          biDanh: data.movie.biDanh,
-        });
-        toast.success("Cập nhật phim thành công");
-     
-   
+        if(data){
+          if ( data.statusCode === 200) {
+            setMovieState({
+              maPhim: data.content.maPhim,
+              tenPhim: data.content.tenPhim,
+              trailer: data.content.trailer,
+              hinhAnh: data.content.hinhAnh,
+              moTa: data.content.moTa,
+              maNhom: data.content.maNhom,
+              hot: data.content.hot,
+              dangChieu: data.content.dangChieu,
+              sapChieu: data.content.sapChieu,
+              ngayKhoiChieu: formatDate(data.content.ngayKhoiChieu),
+              danhGia: data.content.danhGia,
+              biDanh: data.movie.biDanh,
+            });
+            toast.success("Cập nhật phim thành công");
+         
        
-      } else {
-        toast.error(data.message);
-      }
+           
+          } else {
+            toast.error(data.message);
+          }
+        }
+     
     } else {
       setMessage("");
       toast.error("Please select a valid image file (JPEG, JPG, or PNG)");
