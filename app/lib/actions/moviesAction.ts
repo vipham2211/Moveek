@@ -70,30 +70,30 @@ export async function addNewMovieAction (newMovie:FormData){
 export async function updateMovieAction (movie:FormData){
 
 	  try {
-		const userCookie = cookies().get("REMEMBERME");
-		if (!userCookie) return;
-		const { accessToken } = JSON.parse(userCookie.value);
-		const res = await fetch(
-			`${process.env.DOMAIN}/QuanLyPhim/CapNhatPhimUpload`,{
-				method:'POST',
-				headers:{
-					'Authorization': `Bearer ${accessToken}`,
-				},
-				body: movie,
-			}
-		  );
+			const userCookie = cookies().get("REMEMBERME");
+	if (!userCookie) return;
+	const { accessToken } = JSON.parse(userCookie.value);
+	const res = await fetch(
+		`${process.env.DOMAIN}/QuanLyPhim/CapNhatPhimUpload`,{
+			method:'POST',
+			headers:{
+				'Authorization': `Bearer ${accessToken}`,
+			},
+			body: movie,
+		}
+	  );
+
+	  const data = await res.json();
+	  if (data.statusCode === 200) {
+		revalidateTag("listMoviesAdmin");
+        revalidateTag("listMoviesClient");
+        revalidateTag("showtimeInfoMovie");
+        revalidateTag("listCinemas")
+	  }
 	
-		  const data = await res.json();
-		  if (data.statusCode === 200) {
-			revalidateTag("listMoviesAdmin");
-			revalidateTag("listMoviesClient");
-			revalidateTag("showtimeInfoMovie");
-			revalidateTag("listCinemas")
-		  }
-		
-		  return data
+	  return data
 	 }catch (error) {
-		return null;
+		return {error};
 	 }
 }
 export async function deleteMovieAction  (id:number){
