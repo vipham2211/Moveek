@@ -3,7 +3,7 @@ import Input from "@/components/ui/Input";
 import { SubmitButton } from "@/components/ui/SubmitButton";
 import { CloudArrowUpIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import React, { Fragment, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Flatpickr from "react-flatpickr";
 import { toast } from "react-toastify";
 import SwitchComponent from "./SwitchComponent";
