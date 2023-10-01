@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import AddNewUser from '../AddNewUser'
+import AddNewUser from '../_components/AddNewUser'
 import { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {

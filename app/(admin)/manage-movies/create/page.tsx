@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import React, { Fragment } from 'react'
-import AddNewMovie from '../AddNewMovie';
+import AddNewMovie from '../_components/AddNewMovie';
 
 
 export async function generateMetadata(): Promise<Metadata> {

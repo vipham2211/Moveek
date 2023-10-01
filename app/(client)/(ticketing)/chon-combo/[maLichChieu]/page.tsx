@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ComboSelection from "./ComboSelection";
+import ComboSelection from "../../_components/ComboSelection";
 import React from "react";
 import { decode } from "@/common.funcs";
 

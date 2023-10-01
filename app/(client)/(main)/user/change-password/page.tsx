@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react'
-import ChangePassword from './ChangePassword';
+import ChangePassword from '../_components/ChangePassword';
 
 
 export async function generateMetadata(): Promise<Metadata> {

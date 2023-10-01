@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Content from "./Content";
+import Content from "../_components/ListMovies";
 import { fetchListMoviesAction } from "@/app/lib/actions/moviesAction";
 import { Metadata } from "next";
 

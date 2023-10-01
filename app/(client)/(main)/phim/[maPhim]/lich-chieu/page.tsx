@@ -1,8 +1,7 @@
 import { fetchTheaterInfoByMovieId } from '@/app/lib/actions/cinemasAction';
-import { fetchMovieDetail } from '@/app/lib/actions/moviesAction';
 import { Metadata } from 'next';
 import React from 'react'
-import MovieSchedule from './MovieSchedule';
+import MovieSchedule from '../../_components/MovieSchedule';
 
 interface pageProps {
   params:{maPhim:string}

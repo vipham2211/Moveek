@@ -1,6 +1,6 @@
 import React from "react";
 import { decode } from "@/common.funcs";
-import TicketInfo from "./TicketInfo"; 
+import TicketInfo from "../../_components/TicketInfo"; 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import {  fetchTheaterInfoByShowtimeId } from "@/app/lib/actions/cinemasAction";

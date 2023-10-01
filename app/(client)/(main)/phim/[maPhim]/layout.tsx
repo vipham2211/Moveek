@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import MovieDetail from './MovieDetail';
+import MovieDetail from '../_components/MovieDetail';
 import { fetchMovieDetail } from '@/app/lib/actions/moviesAction';
 import Menu from '@/components/ui/Menu';
 

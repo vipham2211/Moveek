@@ -1,13 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import EntriesListBox from "@/app/(admin)/EntriesListBox";
+import EntriesListBox from "@/app/(admin)/_components/EntriesListBox";
 import UsersTable from "./UsersTable";
 import { DataListUsersInterface } from "@/common.types";
-import Pagination from "@/app/(admin)/Pagination";
-import SearchTable from "../../SearchTable";
-import AddNewButton from "../../AddNewButton";
+import Pagination from "@/app/(admin)/_components/Pagination";
+import SearchTable from "../../_components/SearchTable";
+import AddNewButton from "../../_components/AddNewButton";
 import { useModal } from "@/common.stateFuncs";
-import AddNewUser from "../AddNewUser";
+import AddNewUser from "./AddNewUser";
 
 interface UsersTableProps {
   dataListUsers: DataListUsersInterface;

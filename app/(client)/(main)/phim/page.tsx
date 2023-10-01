@@ -1,7 +1,7 @@
 import { fetchListMovies } from "@/app/lib/actions/moviesAction";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
-import ListMovie from "./ListMovie";
+import ListMovie from "./_components/ListMovie";
 
 export const metadata: Metadata = {
   title: "Danh sách phim | Mua vé, Lịch chiếu, Review phim, Giá vé",

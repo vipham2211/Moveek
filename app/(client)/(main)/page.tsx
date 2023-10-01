@@ -7,7 +7,7 @@ import {
   fetchListCinemas,
 } from "../../lib/actions/cinemasAction";
 import { fetchListMovies } from "../../lib/actions/moviesAction";
-import Footer from "@/components/shared/Footer";
+
 
 
 export const metadata: Metadata = {

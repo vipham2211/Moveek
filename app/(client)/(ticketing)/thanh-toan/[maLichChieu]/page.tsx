@@ -1,9 +1,9 @@
 import { decode } from "@/common.funcs"; 
-import Checkout from "./Checkout"; 
+import Checkout from "../../_components/Checkout"; 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
-import PaymentMethod from "./PaymentMethod";
+import PaymentMethod from "../../_components/PaymentMethod";
 import { fetchTheaterInfoByShowtimeId } from "@/app/lib/actions/cinemasAction";
 
 interface PageProps {

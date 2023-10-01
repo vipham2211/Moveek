@@ -1,6 +1,6 @@
-import TicketingSteps from "@/app/(client)/(ticketing)/TicketingSteps";
+import TicketingSteps from "@/app/(client)/(ticketing)/_components/TicketingSteps";
 import { Fragment } from "react";
-import BookingInfo from "@/app/(client)/(ticketing)/BookingInfo";
+import BookingInfo from "@/app/(client)/(ticketing)/_components/BookingInfo";
 
 export default async function Layout({
   children,

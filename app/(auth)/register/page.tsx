@@ -2,7 +2,7 @@ import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import Image from "next/image";
 import React from "react";
-import Register from "./Register";
+import Register from "../_components/Register";
 import { Metadata } from "next";
 import { fetchCinemaSystems } from "@/app/lib/actions/cinemasAction";
 

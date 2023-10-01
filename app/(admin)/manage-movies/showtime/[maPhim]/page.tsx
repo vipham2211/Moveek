@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import CreateShowtime from './CreateShowtime'
+import CreateShowtime from '../../_components/CreateShowtime'
 import { fetchMovieDetail } from '@/app/lib/actions/moviesAction'
 import Image from 'next/image'
 import { fetchCinemaSystems, fetchListCinemas } from '@/app/lib/actions/cinemasAction'

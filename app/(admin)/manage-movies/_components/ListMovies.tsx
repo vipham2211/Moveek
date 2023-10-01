@@ -1,15 +1,15 @@
 'use client'
 import { PlusSmallIcon } from '@heroicons/react/24/outline'
 import React,{useEffect, useState} from 'react'
-import EntriesListBox from '@/app/(admin)/EntriesListBox'
+import EntriesListBox from '@/app/(admin)/_components/EntriesListBox'
 import { DataListMoviesInterface } from '@/common.types'
-import Pagination from '@/app/(admin)/Pagination'
+import Pagination from '@/app/(admin)/_components/Pagination'
 import { useRouter } from 'next/navigation'
 import MoviesTable from './MoviesTable'
-import SearchTable from '../../SearchTable'
-import AddNewButton from '../../AddNewButton'
+import SearchTable from '../../_components/SearchTable'
+import AddNewButton from '../../_components/AddNewButton'
 import { useModal } from '@/common.stateFuncs'
-import AddNewMovie from '../AddNewMovie'
+import AddNewMovie from './AddNewMovie'
 
 interface UsersTableProps {
 	dataListMovies:DataListMoviesInterface,

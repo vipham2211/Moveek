@@ -1,5 +1,5 @@
 import { decode } from "@/common.funcs";
-import SeatSelection from "./SeatSelection"; 
+import SeatSelection from "../../_components/SeatSelection"; 
 import { Metadata } from "next";
 import React from "react";
 import { fetchTheaterInfoByShowtimeId } from "@/app/lib/actions/cinemasAction";

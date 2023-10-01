@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import Sidebar from "./Sidebar";
-import Header from "./Header";
-import Footer from "./Footer";
+import Sidebar from "./_components/Sidebar";
+import Header from "./_components/Header";
+import Footer from "./_components/Footer";
 
 
 interface LayoutProps {

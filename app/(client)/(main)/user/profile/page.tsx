@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import React from "react";
-import UpdateProfile from "./UpdateProfile";
+import UpdateProfile from "../_components/UpdateProfile";
 
 
 export async function generateMetadata(): Promise<Metadata> {

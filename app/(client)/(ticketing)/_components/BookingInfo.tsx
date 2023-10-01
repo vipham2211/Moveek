@@ -1,7 +1,7 @@
 "use client";
 import { decode, encode, formatTotalCost } from "@/common.funcs";
 import React, { Fragment, useEffect, useState } from "react";
-import Modal from "../../../components/ui/Modal";
+import Modal from "../../../../components/ui/Modal";
 import { useModal } from "@/common.stateFuncs";
 import { usePathname, useRouter } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
@@ -12,9 +12,9 @@ import {
   setListSeatSelectedStore,
   setComboDataStore,
 } from "@/redux/features/bookingSlice";
-import LoadingComponent from "../../../components/shared/LoadingComponent";
+import LoadingComponent from "../../../../components/shared/LoadingComponent";
 import TheaterInfo from "./TheaterInfo";
-import LoginComponent from "../../../components/shared/LoginComponent";
+import LoginComponent from "../../../../components/shared/LoginComponent";
 import { comboData } from "@/app/(client)/(ticketing)/chon-combo/comboData"; 
 import { checkToken } from "@/app/lib/actions/userAction";
 import { checkout } from "@/app/lib/actions/cinemasAction";

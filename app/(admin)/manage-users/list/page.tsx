@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Content from './Content'
+import Content from '../_components/ListUsers'
 import { fetchListUsersAction } from '@/app/lib/actions/userAction'
 import { Metadata } from 'next';
 

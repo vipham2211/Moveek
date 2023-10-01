@@ -1,6 +1,6 @@
 import { fetchListMoviesAction } from '@/app/lib/actions/moviesAction'
 import React from 'react'
-import Content from './list/Content'
+import Content from './_components/ListMovies'
 
 
 

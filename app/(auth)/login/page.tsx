@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react'
-import Login from './Login';
+import Login from '../_components/Login';
 import Image from 'next/image';
 
 export const metadata: Metadata = {

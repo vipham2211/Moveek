@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import React from "react";
-import Content from "./Content";
+import Orders from "../_components/Orders";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,11 +14,7 @@ const page = async () => {
 
   return (
 	<div className="mb-10">
-	
-      <Content/>
-   
-		
-
+      <Orders/>
 	</div>
     
   );

@@ -3,7 +3,7 @@ import { MovieDetailInterface } from "@/common.types";
 import Input from "@/components/ui/Input";
 import { SubmitButton } from "@/components/ui/SubmitButton";
 import React, { useEffect, useState } from "react";
-import SwitchComponent from "../SwitchComponent";
+import SwitchComponent from "./SwitchComponent";
 import Flatpickr from "react-flatpickr";
 import Image from "next/image";
 import { CloudArrowUpIcon } from "@heroicons/react/24/outline";
