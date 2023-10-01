@@ -41,6 +41,7 @@ const Pagination = ({
                   ...(keyword ? { keyword } : {}),
                    page: 1,limit:limit },
               }}
+              prefetch={false}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
               ‹‹
@@ -54,6 +55,7 @@ const Pagination = ({
                   ...(keyword ? { keyword } : {}),
                    page: currentPage - 1,limit:limit },
               }}
+              prefetch={false}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
               ‹
@@ -68,6 +70,7 @@ const Pagination = ({
                   ...(keyword ? { keyword } : {}),
                   page: page,limit:limit},
               }}
+              prefetch={false}
               className={`px-4 py-2 rounded-[0.25rem] ${
                 page === currentPage ? "bg-[#E5E7EB]" : "hover:bg-[#e0e0fc]"
               }`}
@@ -83,6 +86,7 @@ const Pagination = ({
                   ...(keyword ? { keyword } : {}),
                    page: currentPage + 1,limit:limit },
               }}
+              prefetch={false}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
               ›
@@ -97,6 +101,7 @@ const Pagination = ({
                    page: totalPages,limit:limit
               },
               }}
+              prefetch={false}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
               ››
