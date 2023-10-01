@@ -101,8 +101,6 @@ const EditMovie = ({ movie, closeModal }: EditMovieProps) => {
       );
 
       if (statusCode === 200) {
-        toast.success("Cập nhật phim thành công");
-
         setMovieState({
           maPhim: content.maPhim,
           tenPhim: content.tenPhim,
@@ -117,10 +115,8 @@ const EditMovie = ({ movie, closeModal }: EditMovieProps) => {
           danhGia: content.danhGia,
           biDanh: movie.biDanh,
         });
-        revalidateTagAction("listMoviesAdmin");
-        revalidateTagAction("listMoviesClient");
-        revalidateTagAction("showTime");
-        revalidateTagAction("showtimeInfoMovie");
+        toast.success("Cập nhật phim thành công");
+
       } else {
         toast.error(message);
       }
