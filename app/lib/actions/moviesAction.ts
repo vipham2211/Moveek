@@ -69,8 +69,8 @@ export async function addNewMovieAction (newMovie:FormData){
 }
 export async function updateMovieAction (movie:FormData){
 
-	  try {
-			const userCookie = cookies().get("REMEMBERME");
+	  
+	const userCookie = cookies().get("REMEMBERME");
 	if (!userCookie) return;
 	const { accessToken } = JSON.parse(userCookie.value);
 	const res = await fetch(
@@ -92,9 +92,7 @@ export async function updateMovieAction (movie:FormData){
 	  }
 	
 	  return data
-	 }catch (error) {
-		return null;
-	 }
+	
 }
 export async function deleteMovieAction  (id:number){
 	const userCookie = cookies().get("REMEMBERME");
