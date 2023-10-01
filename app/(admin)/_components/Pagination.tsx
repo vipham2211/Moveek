@@ -37,7 +37,9 @@ const Pagination = ({
             <Link
               href={{
                 pathname: `/${href}/list`,
-                query: { page: 1,limit:limit,keyword:keyword ? `${keyword}` : "" },
+                query: {
+                  ...(keyword ? { keyword } : {}),
+                   page: 1,limit:limit },
               }}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
@@ -48,7 +50,9 @@ const Pagination = ({
             <Link
               href={{
                 pathname: `/${href}/list`,
-                query: { page: currentPage - 1,limit:limit,keyword:keyword ? `${keyword}` : "" },
+                query: {
+                  ...(keyword ? { keyword } : {}),
+                   page: currentPage - 1,limit:limit },
               }}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
@@ -60,7 +64,9 @@ const Pagination = ({
               key={page}
               href={{
                 pathname: `/${href}/list`,
-                query: { page: page,limit:limit,keyword:keyword ? `${keyword}` : "" },
+                query: { 
+                  ...(keyword ? { keyword } : {}),
+                  page: page,limit:limit},
               }}
               className={`px-4 py-2 rounded-[0.25rem] ${
                 page === currentPage ? "bg-[#E5E7EB]" : "hover:bg-[#e0e0fc]"
@@ -73,7 +79,9 @@ const Pagination = ({
             <Link
               href={{
                 pathname: `/${href}/list`,
-                query: { page: currentPage + 1,limit:limit,keyword:keyword ? `${keyword}` : "" },
+                query: {
+                  ...(keyword ? { keyword } : {}),
+                   page: currentPage + 1,limit:limit },
               }}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
@@ -82,10 +90,12 @@ const Pagination = ({
           )}
           {currentPage < totalPages - 2 && (
             <Link
-           
               href={{
                 pathname: `/${href}/list`,
-                query: { page: totalPages,limit:limit,keyword:keyword ? `${keyword}` : "" },
+                query: {
+                  ...(keyword ? { keyword } : {}),
+                   page: totalPages,limit:limit
+              },
               }}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
