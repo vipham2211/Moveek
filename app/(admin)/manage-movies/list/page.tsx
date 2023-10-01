@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Content from "../_components/ListMovies";
+import ListMovies from "../_components/ListMovies";
 import { fetchListMoviesAction } from "@/app/lib/actions/moviesAction";
 import { Metadata } from "next";
 
@@ -29,7 +29,7 @@ const page = async ({ searchParams }: pageProps) => {
       <div className="text-xl tracking-wide mb-5 font-semibold">
         List movies
       </div>
-      <Content dataListMovies={dataListMovies} keyword={keyword} />
+      <ListMovies dataListMovies={dataListMovies} keyword={keyword} />
     </Fragment>
   );
 };

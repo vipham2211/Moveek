@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Content from '../_components/ListUsers'
+import ListUsers from '../_components/ListUsers'
 import { fetchListUsersAction } from '@/app/lib/actions/userAction'
 import { Metadata } from 'next';
 
@@ -24,7 +24,7 @@ const page = async ({searchParams}:pageProps) => {
     <div className="text-xl tracking-wide mb-5 font-semibold">
      List users
     </div>
-	<Content dataListUsers={dataListUsers} keyword={keyword} />
+	<ListUsers dataListUsers={dataListUsers} keyword={keyword} />
   </Fragment>
 	
   )

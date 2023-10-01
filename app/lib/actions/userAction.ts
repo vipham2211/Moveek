@@ -139,7 +139,9 @@ export async function fetchListUsersAction(soTrang:number,soPhanTuTrenTrang:numb
 
   const keywordParam =  tuKhoa  ? `&tuKhoa=${tuKhoa}` : '';
   const res = await fetch(
-    `${process.env.DOMAIN}/QuanLyNguoiDung/LayDanhSachNguoiDungPhanTrang?MaNhom=GP00${keywordParam}&soTrang=${soTrang}&soPhanTuTrenTrang=${soPhanTuTrenTrang}`
+    `${process.env.DOMAIN}/QuanLyNguoiDung/LayDanhSachNguoiDungPhanTrang?MaNhom=GP00${keywordParam}&soTrang=${soTrang}&soPhanTuTrenTrang=${soPhanTuTrenTrang}`,{
+      next: { tags: ["listUsers"] },
+    }
     
   );
   if (!res.ok) {
@@ -189,7 +191,9 @@ export async function deleteUserAction (taiKhoan:string){
     }
   );
   const data = await res.json();
-
+  if (data.statusCode === 200) {
+    revalidateTag("listUsers");
+  }
   return data
 }
 
