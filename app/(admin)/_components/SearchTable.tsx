@@ -14,23 +14,21 @@ const SearchTable = ({limit,keyword,href}:SearchTableProps) => {
 	const [value,setValue] = useState(keyword)
 	const debounceSearchValue = useDebounce(value,500)
 	
-	
-	useEffect(()=>{
-		if (!!debounceSearchValue) {
-			router.push(
-			  `/${href}/list?page=${1}&limit=${limit}&keyword=${debounceSearchValue}`
-			);
-		  } else {
-			router.push(`/${href}/list`);
-		  }
-	  },[router,debounceSearchValue,limit,href])
-
+	 
 
 	const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>)=>{
 		setValue(e.target.value)
 	
 	  }
-
+	  useEffect(()=>{
+		if (debounceSearchValue) {
+			router.push(
+			  `/${href}/list?page=${1}&limit=${limit}&keyword=${debounceSearchValue}`
+			);
+		  } else {
+			router.push(`/${href}/list?page=${1}&limit=${limit}`);
+		  }
+	  },[router,debounceSearchValue,limit,href])
 
   return (
 	<input

@@ -39,6 +39,8 @@ export async function fetchListMoviesAction(soTrang:number,soPhanTuTrenTrang:num
 	const res = await fetch(
 	  `${process.env.DOMAIN}/QuanLyPhim/LayDanhSachPhimPhanTrang?MaNhom=GP00${keywordParam}&soTrang=${soTrang}&soPhanTuTrenTrang=${soPhanTuTrenTrang}`,{
 		next: { tags: ["listMoviesAdmin"] },
+		cache: 'no-store' 
+		,
 	  }
 	);
 	if (!res.ok) {

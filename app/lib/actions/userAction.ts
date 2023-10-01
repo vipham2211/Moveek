@@ -141,6 +141,7 @@ export async function fetchListUsersAction(soTrang:number,soPhanTuTrenTrang:numb
   const res = await fetch(
     `${process.env.DOMAIN}/QuanLyNguoiDung/LayDanhSachNguoiDungPhanTrang?MaNhom=GP00${keywordParam}&soTrang=${soTrang}&soPhanTuTrenTrang=${soPhanTuTrenTrang}`,{
       next: { tags: ["listUsers"] },
+      cache: 'no-store' 
     }
     
   );
