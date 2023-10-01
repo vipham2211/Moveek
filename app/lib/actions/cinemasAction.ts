@@ -46,6 +46,7 @@ export  async function fetchTheaterInfoByShowtimeId(showtimeId: number) {
 	  headers: {
 			"Authorization":`Bearer ${accessToken}`
 		},
+		cache:'no-store'
 	 } );
 	
 	  if (!res.ok) {
