@@ -17,9 +17,7 @@ export  async function fetchListCinemas(cinemaSystemId:string) {
 		throw new Error(`${res.status} : Failed to fetch data list cinemas`);
 	}
 	const data = await res.json()
-	if(data.statusCode === 200){
-		revalidateTag('listCinemas')
-	}
+
 	return data.content[0].lstCumRap;
   }
 
