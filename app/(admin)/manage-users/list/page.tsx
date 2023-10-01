@@ -4,7 +4,7 @@ import { fetchListUsersAction } from '@/app/lib/actions/userAction'
 import { Metadata } from 'next';
 
 interface pageProps {
-	searchParams : {page:string,limit:string,keyword:string}
+	searchParams: { [key: string]: string | string[] | undefined }
   }
   
   export async function generateMetadata(): Promise<Metadata> {

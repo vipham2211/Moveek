@@ -5,7 +5,7 @@ import Content from './_components/ListMovies'
 
 
 interface pageProps {
-  searchParams : {page:string,limit:string,keyword:string}
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
 
