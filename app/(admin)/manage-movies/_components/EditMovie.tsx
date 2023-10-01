@@ -101,7 +101,10 @@ const EditMovie = ({ movie, closeModal }: EditMovieProps) => {
       );
 
       if (statusCode === 200) {
-
+        revalidateTagAction("listMoviesAdmin");
+        revalidateTagAction("listMoviesClient");
+        revalidateTagAction("showtimeInfoMovie");
+        revalidateTagAction("listCinemas")
         setMovieState({
           maPhim: content.maPhim,
           tenPhim: content.tenPhim,
