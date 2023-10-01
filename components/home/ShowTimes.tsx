@@ -53,7 +53,7 @@ const ShowTimes = ({ listMoviesShowTimes }: ShowTimesProps) => {
                         key={index}
                         href={`chon-ghe/${encodeMalichChieu}`}
                         className={`showTimes w-14 h-11`}
-                        prefetch={false}                  
+                        prefetch               
                       >
                         <p className="text-sm">
                           {formatHours(item.ngayChieuGioChieu)}
