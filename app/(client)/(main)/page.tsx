@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "mua vé, mua vé trực tuyến, mua vé galaxy, mua vé cgv, mua vé bhd, mua vé beta, mua vé cinestar, mua vé mega, mua vé starlight, mua vé rio, mua vé touch, mua vé ddc, mua vé đống đa, mua vé cinemax, đặt vé cgv, đặt vé bhd, đặt vé beta, đặt vé cinestar, đặt vé mega, đặt vé starlight, đặt vé rio, đặt vé touch, đặt vé ddc, đặt vé đống đa, đặt vé cinemax",
 };
-export default async function HomePage() {
+ const  page = async () => {
   const listMoviesData = fetchListMovies();
   const listCinemaSystemsData = fetchCinemaSystems();
   const defaultCinemasData = fetchListCinemas("BHDStar");
@@ -38,3 +38,5 @@ export default async function HomePage() {
     </Fragment>
   );
 }
+
+export default page
