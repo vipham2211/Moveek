@@ -30,7 +30,9 @@ export  async function fetchMovieDetail(maPhim:string) {
 		return notFound()
 	}
 	const data = await res.json()
-	
+	if(data.statusCode === 200){
+		revalidateTag('movieDetail')
+	}
 	return data.content
 }
 

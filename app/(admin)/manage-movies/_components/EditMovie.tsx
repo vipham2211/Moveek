@@ -122,7 +122,7 @@ const EditMovie = ({ movie, closeModal }: EditMovieProps) => {
         revalidateTagAction("listMoviesClient");
         revalidateTagAction("showTime");
         revalidateTagAction("showtimeInfoMovie");
-        revalidateTagAction("movieDetail")
+       
       } else {
         toast.error(message);
       }
