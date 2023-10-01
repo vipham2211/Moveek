@@ -37,9 +37,8 @@ export async function fetchListMoviesAction(soTrang:number,soPhanTuTrenTrang:num
 
 	const keywordParam =  tenPhim  ? `&tenPhim=${tenPhim}` : '';
 	const res = await fetch(
-	  `${process.env.DOMAIN}/QuanLyPhim/LayDanhSachPhimPhanTrang?MaNhom=GP00${keywordParam}&soTrang=${soTrang}&soPhanTuTrenTrang=${soPhanTuTrenTrang}`,{
-		next: { tags: ["listMoviesAdmin"] },
-	  }
+	  `${process.env.DOMAIN}/QuanLyPhim/LayDanhSachPhimPhanTrang?MaNhom=GP00${keywordParam}&soTrang=${soTrang}&soPhanTuTrenTrang=${soPhanTuTrenTrang}`
+	  
 	);
 	if (!res.ok) {
 	  
@@ -78,7 +77,7 @@ export async function updateMovieAction (movie:FormData){
 	  );
 	  const data = await res.json();
 	  if(data.statusCode === 200){
-		revalidateTag("listMoviesAdmin");
+	
         revalidateTag("listMoviesClient");
         revalidateTag("showTime");
         revalidateTag("showtimeInfoMovie");
