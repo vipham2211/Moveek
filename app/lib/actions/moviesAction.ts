@@ -68,33 +68,28 @@ export async function addNewMovieAction (newMovie:FormData){
 	  return data
 }
 export async function updateMovieAction (movie:FormData){
+	const userCookie = cookies().get("REMEMBERME");
+	if (!userCookie) return;
+	const { accessToken } = JSON.parse(userCookie.value);
+	const res = await fetch(
+		`${process.env.DOMAIN}/QuanLyPhim/CapNhatPhimUpload`,{
+			method:'POST',
+			headers:{
+				'Authorization': `Bearer ${accessToken}`,
+			},
+			body: movie,
+		}
+	  );
 
-	  try {
-		const userCookie = cookies().get("REMEMBERME");
-		if (!userCookie) return;
-		const { accessToken } = JSON.parse(userCookie.value);
-		const res = await fetch(
-			`${process.env.DOMAIN}/QuanLyPhim/CapNhatPhimUpload`,{
-				method:'POST',
-				headers:{
-					'Authorization': `Bearer ${accessToken}`,
-				},
-				body: movie,
-			}
-		  );
-	
-		  const data = await res.json();
-		 
-			revalidateTag("listMoviesAdmin");
-			revalidateTag("listMoviesClient");
-			revalidateTag("showtimeInfoMovie");
-			revalidateTag("listCinemas")
-
-			return data
-	  } catch (e) {
-		return { message: 'Failed to update' }
+	  const data = await res.json();
+	  if (data && data.statusCode === 200) {
+		revalidateTag("listMoviesAdmin");
+        revalidateTag("listMoviesClient");
+        revalidateTag("showtimeInfoMovie");
+        revalidateTag("listCinemas")
 	  }
-	 
+	
+	  return data
 }
 export async function deleteMovieAction  (id:number){
 	const userCookie = cookies().get("REMEMBERME");
