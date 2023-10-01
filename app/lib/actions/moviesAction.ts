@@ -22,7 +22,7 @@ export  async function fetchListMovies() {
 
 export  async function fetchMovieDetail(maPhim:string) {
 	const res = await fetch(`${process.env.DOMAIN}/QuanLyPhim/LayThongTinPhim?MaPhim=${Number(maPhim)}`,{
-		next: { tags: ["movieDetail"] }
+		cache: 'no-store'
 	})
 	
 	if (!res.ok) {
@@ -30,9 +30,7 @@ export  async function fetchMovieDetail(maPhim:string) {
 		return notFound()
 	}
 	const data = await res.json()
-	if(data.statusCode === 200){
-		revalidateTag('movieDetail')
-	}
+	
 	return data.content
 }
 
