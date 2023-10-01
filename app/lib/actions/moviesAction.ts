@@ -85,6 +85,7 @@ export async function updateMovieAction (movie:FormData){
 			revalidateTag("listMoviesAdmin");
 			revalidateTag("listMoviesClient");
 			revalidateTag("showtimeInfoMovie");
+			
 		}
 	  return data
 }
