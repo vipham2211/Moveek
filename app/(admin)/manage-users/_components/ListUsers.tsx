@@ -55,7 +55,7 @@ const ListUsers = ({ dataListUsers, keyword }: UsersTableProps) => {
           <span>entries per page</span>
         </div>
 
-        <SearchTable limit={limit} keyword={keyword} href="manage-users" />
+        <SearchTable limit={limit} keyword={keyword}  currentPage={dataListUsersState.currentPage} href="manage-users" />
       </div>
       <UsersTable
         dataListUsersState={dataListUsersState}
