@@ -16,7 +16,7 @@ const SearchTable = ({limit,keyword,href}:SearchTableProps) => {
 	
 	
 	useEffect(()=>{
-		if (debounceSearchValue.length > 0) {
+		if (!!debounceSearchValue) {
 			router.push(
 			  `/${href}/list?page=${1}&limit=${limit}&keyword=${debounceSearchValue}`
 			);
