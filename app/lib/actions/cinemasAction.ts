@@ -6,8 +6,8 @@ import { cookies } from "next/headers";
 
 
 export  async function fetchListCinemas(cinemaSystemId:string) {
-	const res = await fetch(  `${process.env.DOMAIN}/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${cinemaSystemId}&maNhom=GP00`,{
-		cache:'no-store'
+	const res = await fetch(`${process.env.DOMAIN}/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${cinemaSystemId}&maNhom=GP00`,{
+		next: { tags: ["listCinemas"] }
 	}
 	)
 	
@@ -17,7 +17,7 @@ export  async function fetchListCinemas(cinemaSystemId:string) {
 		throw new Error(`${res.status} : Failed to fetch data list cinemas`);
 	}
 	const data = await res.json()
-
+	
 	return data.content[0].lstCumRap;
   }
 
