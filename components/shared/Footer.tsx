@@ -79,7 +79,7 @@ const Footer = ({listCinemaSystems}:FooterProps) => {
       </div> 
       <div className='w-full justify-center sm:w-2/12 flex sm:items-center'>
       <Image
-          src={'/assets/daThongBao.png'}
+          src={'/assets/dathongbao.png'}
           width={0}
           height={0}
           sizes='100vw'
