@@ -96,34 +96,32 @@ const EditMovie = ({ movie, closeModal }: EditMovieProps) => {
       formData.append("dangChieu", JSON.stringify(dangChieu));
       formData.append("sapChieu", JSON.stringify(sapChieu));
       formData.append("biDanh", movie.biDanh);
-      const  data= await updateMovieAction(
+      const { statusCode, message, content } = await updateMovieAction(
         formData
       );
-        if(data){
-          if ( data.statusCode === 200) {
-            setMovieState({
-              maPhim: data.content.maPhim,
-              tenPhim: data.content.tenPhim,
-              trailer: data.content.trailer,
-              hinhAnh: data.content.hinhAnh,
-              moTa: data.content.moTa,
-              maNhom: data.content.maNhom,
-              hot: data.content.hot,
-              dangChieu: data.content.dangChieu,
-              sapChieu: data.content.sapChieu,
-              ngayKhoiChieu: formatDate(data.content.ngayKhoiChieu),
-              danhGia: data.content.danhGia,
-              biDanh: data.movie.biDanh,
-            });
-            toast.success("Cập nhật phim thành công");
-         
-       
-           
-          } else {
-            toast.error(data.message);
-          }
-        }
+
+      if (statusCode === 200) {
+        setMovieState({
+          maPhim: content.maPhim,
+          tenPhim: content.tenPhim,
+          trailer: content.trailer,
+          hinhAnh: content.hinhAnh,
+          moTa: content.moTa,
+          maNhom: content.maNhom,
+          hot: content.hot,
+          dangChieu: content.dangChieu,
+          sapChieu: content.sapChieu,
+          ngayKhoiChieu: formatDate(content.ngayKhoiChieu),
+          danhGia: content.danhGia,
+          biDanh: movie.biDanh,
+        });
+        toast.success("Cập nhật phim thành công");
      
+   
+       
+      } else {
+        toast.error(message);
+      }
     } else {
       setMessage("");
       toast.error("Please select a valid image file (JPEG, JPG, or PNG)");

@@ -82,7 +82,7 @@ export async function updateMovieAction (movie:FormData){
 	  );
 
 	  const data = await res.json();
-	  if (data && data.statusCode === 200) {
+	  if (data.statusCode === 200) {
 		revalidateTag("listMoviesAdmin");
         revalidateTag("listMoviesClient");
         revalidateTag("showtimeInfoMovie");
