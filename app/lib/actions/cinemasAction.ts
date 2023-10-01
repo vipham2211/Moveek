@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 
 export  async function fetchListCinemas(cinemaSystemId:string) {
 	const res = await fetch(  `${process.env.DOMAIN}/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${cinemaSystemId}&maNhom=GP00`,{
-		next: { tags: ["showtime"] },
+		cache: 'no-store',
 	}
 	)
 	

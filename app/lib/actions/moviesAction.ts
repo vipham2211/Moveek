@@ -84,7 +84,6 @@ export async function updateMovieAction (movie:FormData){
 		if(data.statusCode === 200){
 			revalidateTag("listMoviesAdmin");
 			revalidateTag("listMoviesClient");
-			revalidateTag("showTime");
 			revalidateTag("showtimeInfoMovie");
 		}
 	  return data
