@@ -139,7 +139,6 @@ const MoviesTable = ({
                     height={0}
                     sizes="100vw"
                     alt={movie.tenPhim}
-                    priority
                     className="w-16 h-auto hidden sm:block"
                   />
 

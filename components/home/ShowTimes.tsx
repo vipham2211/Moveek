@@ -33,7 +33,7 @@ const ShowTimes = ({ listMoviesShowTimes }: ShowTimesProps) => {
                   height={0}
                   sizes="100vw"
                   alt={movie.tenPhim}
-                  priority
+                  
                 />
               </div>
 

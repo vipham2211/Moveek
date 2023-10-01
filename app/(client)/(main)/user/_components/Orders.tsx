@@ -38,7 +38,6 @@ const Content = () => {
                   width={0}
                   height={0}
                   sizes="100vh"
-                  priority
                   alt={movie.tenPhim}
                 />
               </div>

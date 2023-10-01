@@ -89,7 +89,7 @@ const Carousel = ({ listMovies }: CarouselProps) => {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    priority
+                    
                   />
                   <label className="w-full font-light text-sm leading-relaxed cursor-pointer absolute bottom-0 left-0 text-center bg-labelCardColor text-white">
                     Mua vé
