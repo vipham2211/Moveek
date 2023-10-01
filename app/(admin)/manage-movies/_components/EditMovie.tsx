@@ -120,7 +120,8 @@ const EditMovie = ({ movie, closeModal }: EditMovieProps) => {
    
        
       } else {
-        toast.error( data.message ?data.message :'failed to update movie');
+       
+        toast.error(data.content ? data.content : 'failed to update');
       }
     } else {
       setMessage("");
