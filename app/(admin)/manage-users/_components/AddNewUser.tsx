@@ -4,7 +4,7 @@ import { userUpdateSchema } from "@/app/lib/schemas/schema";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import { SubmitButton } from "@/components/ui/SubmitButton";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const roles = [
