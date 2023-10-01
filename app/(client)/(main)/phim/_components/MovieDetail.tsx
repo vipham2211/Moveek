@@ -31,7 +31,6 @@ const MovieDetail = ({ movieDetail }: MovieDetailProps) => {
           height={0}
           sizes="100vw"
           alt={movieDetail.tenPhim}
-          priority
         />
       </div>
       <div className="w-full flex flex-col items-center md:items-start md:w-10/12 px-3">

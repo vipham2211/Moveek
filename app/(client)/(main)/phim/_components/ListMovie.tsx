@@ -66,7 +66,6 @@ const ListMovie = ({ listMovie }: ListMovieProps) => {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  priority
                   onClick={()=>router.push(`phim/${item.maPhim}/thong-tin`)}
                 />
                 <label className="w-full font-light text-sm leading-relaxed cursor-pointer absolute bottom-0 left-0 text-center bg-labelCardColor text-white">
