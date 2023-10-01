@@ -8,6 +8,7 @@ import SearchTable from "../../_components/SearchTable";
 import AddNewButton from "../../_components/AddNewButton";
 import { useModal } from "@/common.stateFuncs";
 import AddNewUser from "./AddNewUser";
+import { useParams } from "next/navigation";
 
 interface UsersTableProps {
   dataListUsers: DataListUsersInterface;
@@ -16,16 +17,17 @@ interface UsersTableProps {
 
 const entries = [10, 15, 20, 25];
 
-const Content = ({ dataListUsers, keyword }: UsersTableProps) => {
+const ListUsers = ({ dataListUsers, keyword }: UsersTableProps) => {
 
   const { isOpen, openModal, closeModal } = useModal();
+  const params = useParams()
   const [dataListUsersState, setDataListUsersState] =
     useState<DataListUsersInterface>(dataListUsers);
   const [limit, setLimit] = useState(entries[0]);
 
   useEffect(() => {
     setDataListUsersState(dataListUsers);
-  }, [dataListUsers]);
+  }, [dataListUsers,params.page,params.limit]);
 
   return (
     <div className="p-6 bg-white rounded-lg shadow-lg  ">
@@ -70,4 +72,4 @@ const Content = ({ dataListUsers, keyword }: UsersTableProps) => {
   );
 };
 
-export default Content;
+export default ListUsers;

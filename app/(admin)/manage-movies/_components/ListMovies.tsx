@@ -17,7 +17,7 @@ interface UsersTableProps {
 
 const entries = [10,15,20,25 ];
 
-const Content = ({dataListMovies,keyword}:UsersTableProps) => {
+const ListMovies = ({dataListMovies,keyword}:UsersTableProps) => {
 	const { isOpen, openModal, closeModal } = useModal();
 	const [dataListMoviesState ,setDataListMoviesState] = useState<DataListMoviesInterface>(dataListMovies)
 	const [limit, setLimit] = useState(entries[0])
@@ -52,4 +52,4 @@ const Content = ({dataListMovies,keyword}:UsersTableProps) => {
   )
 }
 
-export default Content
+export default ListMovies
