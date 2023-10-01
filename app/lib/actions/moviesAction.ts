@@ -81,7 +81,12 @@ export async function updateMovieAction (movie:FormData){
 		}
 	  );
 	  const data = await res.json();
-	 
+		if(data.statusCode === 200){
+			revalidateTag("listMoviesAdmin");
+			revalidateTag("listMoviesClient");
+			revalidateTag("showTime");
+			revalidateTag("showtimeInfoMovie");
+		}
 	  return data
 }
 export async function deleteMovieAction  (id:number){
