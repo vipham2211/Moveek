@@ -108,7 +108,7 @@ export async function deleteMovieAction  (id:number){
 		}
 	  );
 	  const data = await res.json();
-	  if(data.statusCode){
+	  if(data.statusCode === 200){
 		revalidateTag('listMoviesAdmin')
 		revalidateTag('listMoviesClient')
 	  }
@@ -129,8 +129,12 @@ export async function createShowtimeAction (showtime:createShowTimeInterface) {
 			body:JSON.stringify(showtime)
 		}
 	  );
-	
-	  return res.json()
+		const data = await res.json()
+		if(data.statusCode === 200){
+			revalidateTag("showtimeInfoMovie");
+			revalidateTag("listCinemas")
+		}
+	  return data
 }
 
 export const fetchImageAction  =async (url:string)=>{
