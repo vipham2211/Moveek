@@ -17,13 +17,17 @@ const Pagination = ({
   href,
 }: PaginationProps) => {
   const pageNumbers = [];
-  const totalPages = Math.round(totalCount/limit)
+  const totalPages = Math.ceil(totalCount/limit)
   for (let i = currentPage - 2; i <= currentPage + 2; i++) {
     if (i < 1) continue;
     if (i >  totalPages) break;
     pageNumbers.push(i);
   }
 
+    const getLinkHref = (page: number) => {
+    let keywordParam = keyword ? `&keyword=${keyword}` : "";
+    return `/${href}/list?page=${page}&limit=${limit}${keywordParam}`;
+  };
 
   return (
     <div className="py-4 flex justify-between">
@@ -35,12 +39,7 @@ const Pagination = ({
         <div className="flex space-x-1">
           {currentPage > 3 && (
             <Link
-              href={{
-                pathname: `/${href}/list`,
-                query: {
-                  ...(keyword ? { keyword } : {}),
-                   page: 1,limit:limit },
-              }}
+              href={getLinkHref(1)}
               prefetch={false}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
@@ -49,12 +48,7 @@ const Pagination = ({
           )}
           {currentPage !== 1 && (
             <Link
-              href={{
-                pathname: `/${href}/list`,
-                query: {
-                  ...(keyword ? { keyword } : {}),
-                   page: currentPage - 1,limit:limit },
-              }}
+              href={getLinkHref(currentPage-1)}
               prefetch={false}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
@@ -64,12 +58,7 @@ const Pagination = ({
           {pageNumbers.map((page) => (
             <Link
               key={page}
-              href={{
-                pathname: `/${href}/list`,
-                query: { 
-                  ...(keyword ? { keyword } : {}),
-                  page: page,limit:limit},
-              }}
+             href={getLinkHref(page)}
               prefetch={false}
               className={`px-4 py-2 rounded-[0.25rem] ${
                 page === currentPage ? "bg-[#E5E7EB]" : "hover:bg-[#e0e0fc]"
@@ -80,12 +69,7 @@ const Pagination = ({
           ))}
           {currentPage !== totalPages && (
             <Link
-              href={{
-                pathname: `/${href}/list`,
-                query: {
-                  ...(keyword ? { keyword } : {}),
-                   page: currentPage + 1,limit:limit },
-              }}
+             href={getLinkHref(currentPage+1)}
               prefetch={false}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >
@@ -94,13 +78,7 @@ const Pagination = ({
           )}
           {currentPage < totalPages - 2 && (
             <Link
-              href={{
-                pathname: `/${href}/list`,
-                query: {
-                  ...(keyword ? { keyword } : {}),
-                   page: totalPages,limit:limit
-              },
-              }}
+            href={getLinkHref(totalPages)}
               prefetch={false}
               className="px-4 py-2 rounded-[0.25rem] hover:bg-[#e0e0fc]"
             >

@@ -1,4 +1,5 @@
 "use client";
+import DropdownMenuUser from "@/components/ui/DropdownMenu";
 import {
   Bars3BottomLeftIcon,
   Bars3Icon,
@@ -83,15 +84,8 @@ const Header = ({ openSidebar, setOpenSidebar }: HeaderProps) => {
           </span>
         </div>
         <div className="flex items-center space-x-1 px-3 cursor-pointer">
-          <Image
-            width={40}
-            height={40}
-            alt="avatar"
-            src={`/assets/no-avatar.png`}
-            className="rounded-full"
-            priority
-          />
-          <span className="hidden md:block text-[14px]">{userLogin.taiKhoan ? userLogin.taiKhoan : ''}</span>
+        <DropdownMenuUser/>
+        <span className="hidden md:block text-[14px]">{userLogin.taiKhoan ? userLogin.taiKhoan : ''}</span>
         </div>
       </div>
     </div>
